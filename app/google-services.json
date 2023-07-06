@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "803474353389",
+    "project_id": "shaileshdatabase",
+    "storage_bucket": "shaileshdatabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803474353389:android:23fa2d37dc2cc8afcf30e4",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "803474353389-nkkanfdv2tmdqareegq26hog50rh96hm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebase",
+            "certificate_hash": "67de61e82d7659e5a8b4aeaf381e22003cf6e2aa"
+          }
+        },
+        {
+          "client_id": "803474353389-jpjk8n1f3nj2samda8o1t3be0nrj1vpe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv2Pfu5sI2orYFbfXWS2y8dJ5AwULJbsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "803474353389-jpjk8n1f3nj2samda8o1t3be0nrj1vpe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
