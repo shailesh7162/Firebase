@@ -6,9 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -39,6 +42,11 @@ public class LoginActivity extends AppCompatActivity {
         login_btn=findViewById(R.id.login_btn);
         register_text=findViewById(R.id.register_text);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
+
         activity = this;
         mAuth = FirebaseAuth.getInstance();
 
@@ -53,7 +61,25 @@ public class LoginActivity extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                signIn();
+                if (!email_edt.getText().toString().isEmpty() && !password_edt.getText().toString().isEmpty()) {
+                    if (password_edt.getText().toString().length() >= 6) {
+                        dialog = new ProgressDialog(LoginActivity.this);
+                        dialog.setTitle("Please Wait");
+                        dialog.setMessage("Signing in...");
+                        dialog.setCancelable(false);
+                        dialog.show();
+                        signIn();
+                    } else {
+                        password_edt.setError("Enter 6 or more Characters");
+                    }
+                } else {
+                    if (email_edt.getText().toString().isEmpty()){
+                        email_edt.setError("Enter Email");
+                    }
+                    if (password_edt.getText().toString().isEmpty()){
+                        password_edt.setError("Enter Password");
+                    }
+                }
             }
         });
     }

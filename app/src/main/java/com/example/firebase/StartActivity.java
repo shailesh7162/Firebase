@@ -29,7 +29,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class StartActivity extends AppCompatActivity {
-    FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
     public static SharedPreferences preferences;
     public static SharedPreferences.Editor editor;
     public static Activity activity;
