@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -75,11 +76,11 @@ public class PhoneActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                if (!getotp.getText().toString().isEmpty()){
-                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, getotp.getText().toString());
+                if (!num_password.getText().toString().isEmpty()){
+                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, num_password.getText().toString());
                     signInWithPhoneAuthCredential(credential);
                 } else {
-                    getotp.setError("Enter OTP");
+                    num_password.setError("Enter OTP");
                 }
             }
         });
