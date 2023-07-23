@@ -190,7 +190,8 @@ public class MainActivity extends AppCompatActivity {
                     dialog.show();
                 }
                 if(item.getItemId()==R.id.nav_show_product){
-
+                    Intent intent=new Intent(MainActivity.this,Show_productActivity.class);
+                    startActivity(intent);
                 }
                  if (item.getItemId() == R.id.menu_logout){
                     mAuth.signOut();
