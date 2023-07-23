@@ -1,4 +1,4 @@
-package com.example.firebase;
+package com.example.firebase.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.firebase.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -77,14 +78,14 @@ public class StartActivity extends AppCompatActivity {
         phoneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(StartActivity.this,PhoneActivity.class);
+                Intent intent=new Intent(StartActivity.this, PhoneActivity.class);
                 startActivity(intent);
             }
         });
         emailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(StartActivity.this,LoginActivity.class);
+                Intent intent=new Intent(StartActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

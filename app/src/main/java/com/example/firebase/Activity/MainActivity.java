@@ -1,4 +1,4 @@
-package com.example.firebase;
+package com.example.firebase.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -14,24 +13,22 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.LinearLayout;
 
+import com.example.firebase.R;
+import com.example.firebase.Modal.product_data;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -190,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
                     dialog.show();
                 }
                 if(item.getItemId()==R.id.nav_show_product){
-                    Intent intent=new Intent(MainActivity.this,Show_productActivity.class);
+                    Intent intent=new Intent(MainActivity.this, Show_productActivity.class);
                     startActivity(intent);
                 }
                  if (item.getItemId() == R.id.menu_logout){
@@ -203,6 +200,27 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        View headerView = navigation.getHeaderView(0);
+        LinearLayout linear = headerView.findViewById(R.id.linear);
+        ImageView img = headerView.findViewById(R.id.profileImg);
+
+        if (method.equals("google"))
+        {
+            toolbar.setBackgroundColor(getResources().getColor(R.color.green));
+            navigation.setBackgroundColor(getResources().getColor(R.color.light_green));
+            linear.setBackgroundColor(getResources().getColor(R.color.green));
+            img.setImageResource(R.drawable.user3);
+        } else if (method.equals("email")){
+            toolbar.setBackgroundColor(getResources().getColor(R.color.blue));
+            navigation.setBackgroundColor(getResources().getColor(R.color.light_blue));
+            linear.setBackgroundColor(getResources().getColor(R.color.blue));
+            img.setImageResource(R.drawable.user1);
+        } else if (method.equals("phone")){
+            toolbar.setBackgroundColor(getResources().getColor(R.color.yellow));
+            navigation.setBackgroundColor(getResources().getColor(R.color.light_yellow));
+            linear.setBackgroundColor(getResources().getColor(R.color.yellow));
+            img.setImageResource(R.drawable.user2);
+        }
 
     }
     @Override

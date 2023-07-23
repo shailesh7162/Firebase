@@ -1,4 +1,4 @@
-package com.example.firebase;
+package com.example.firebase.Adapter;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -18,6 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.firebase.Modal.product_data;
+import com.example.firebase.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 

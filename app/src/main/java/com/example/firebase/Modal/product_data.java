@@ -1,4 +1,4 @@
-package com.example.firebase;
+package com.example.firebase.Modal;
 
 public class product_data
 {
